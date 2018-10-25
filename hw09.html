@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Game</title>
+</head>
+<body onload="tableSet()">
+    <script>
+        function tableSet() {
+
+            const one = document.getElementById("11");
+            const two = document.getElementById("12");
+            const three = document.getElementById("13");
+            const four = document.getElementById("21");
+            const five = document.getElementById("22");
+            const six = document.getElementById("23");
+            const seven = document.getElementById("31");
+            const eight = document.getElementById("32");
+            const nine = document.getElementById("33");
+            const ten = document.getElementById("41");
+            const eleven = document.getElementById("42");
+            const twelve = document.getElementById("43");
+            const cellString = [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve];
+
+            let namesArray = ['King Arthur', 'King Arthur', 'Lancelot', 'Lancelot', 'Sir Bedivere', 'Sir Bedivere', 'Black Knight', 'Black Knight', 'Sir Robin', 'Sir Robin', 'Shrubber', 'Shrubber'];
+            let shuffleArray = new Array();
+
+            while (namesArray.length > 0) {
+                var randIndex = Math.floor(Math.random() * namesArray.length);
+                console.log("randIndex: " + randIndex);
+                shuffleArray.push(namesArray[randIndex]);
+                console.log("New Array: " + shuffleArray);
+                namesArray.splice(randIndex, 1);
+                console.log(namesArray);
+                console.log("Array Length: " + namesArray.length);
+            }
+
+            for (var i = 0; i < shuffleArray.length; i++) {
+                cellString[i].innerHTML = shuffleArray[i];
+            }
+        }
+
+    </script>
+
+    <style>
+        .table {
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .row {
+            display: table-row;
+        }
+
+        .cell {
+            text-align: center;
+            width: 16%;
+            display: table-cell;
+            padding: 10px;
+            border: coral solid 1px;
+            border-collapse: collapse;
+        }
+
+    </style>
+
+    <div id="myTable" class="table">
+        <div class="row">
+            <div id="11" class="cell">
+
+            </div>
+            <div id="12" class="cell">
+
+            </div>
+            <div id="13" class="cell">
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="21" class="cell">
+
+            </div>
+            <div id="22" class="cell">
+
+            </div>
+            <div id="23" class="cell">
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="31" class="cell">
+
+            </div>
+            <div id="32" class="cell">
+
+            </div>
+            <div id="33" class="cell">
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="41" class="cell">
+
+            </div>
+            <div id="42" class="cell">
+
+            </div>
+            <div id="43" class="cell">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
