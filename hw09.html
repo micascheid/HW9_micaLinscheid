@@ -27,12 +27,8 @@
 
             while (namesArray.length > 0) {
                 var randIndex = Math.floor(Math.random() * namesArray.length);
-                console.log("randIndex: " + randIndex);
                 shuffleArray.push(namesArray[randIndex]);
-                console.log("New Array: " + shuffleArray);
                 namesArray.splice(randIndex, 1);
-                console.log(namesArray);
-                console.log("Array Length: " + namesArray.length);
             }
 
             for (var i = 0; i < shuffleArray.length; i++) {
